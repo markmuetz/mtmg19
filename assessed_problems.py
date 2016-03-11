@@ -51,6 +51,8 @@ def Q1():
             break
     print('phi where PE>5%: {}'.format(phiv))
     plt.show()
+    plt.title('Figure 1')
+    plt.savefig('f_error.png')
     print('')
     print('(d)')
     # e-foldinging dist:
@@ -94,8 +96,12 @@ def Q3():
     u1 = 10 # m/s
 
     lat = 12 * np.pi / 180
+    print('lat={} rad'.format(lat))
     y = lat * a
+    print('y={} m'.format(y))
+    print('B={} s-1'.format(B(lat)))
     u2 = u1 * np.exp(-B(lat) * y**2 / (2 * c))
+    print('u2={} ms-1'.format(u2))
      
     for u in [u1, u2]:
         phi = u*c
